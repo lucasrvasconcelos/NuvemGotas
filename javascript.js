@@ -1,5 +1,5 @@
-let input1 = document.querySelector('#pass1')
-let input2 = document.querySelector('#pass2')
+let input1 = document.querySelector('#pass')
+let input2 = document.querySelector('#result')
 let c = input1.value
 
 input1.addEventListener('keyup', () => {
@@ -28,4 +28,14 @@ input1.addEventListener('keyup', () => {
     c = c.replace(/_-9/ig, 's')
 
     input2.value = c
+})
+
+
+const copy = document.querySelector("#copy")
+
+copy.addEventListener("click", () => {
+    const result = document.querySelector("#result")
+    navigator.clipboard.writeText(result.value)
+   .then(()=> {
+        alert("Copied")})
 })
